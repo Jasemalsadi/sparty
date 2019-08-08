@@ -159,9 +159,9 @@ def banner():
 
 def sparty_usage(destination):
     print("[scanning access permissions in forms directory - sharepoint] %s -s forms -u  %s " % (
-    sys.argv[0], destination))
+        sys.argv[0], destination))
     print("[scanning access permissions in frontpage directory - frontpage] %s -f pvt -u %s " % (
-    sys.argv[0], destination))
+        sys.argv[0], destination))
     print("[dumping passwords] %s -d dump -u %s " % (sys.argv[0], destination))
     print("[note] : please take this into consideration!")
     print("\t\t: (1) always specify https | http explcitly !")
@@ -482,7 +482,7 @@ def frontpage_config_check(name):
         except urllib.error.URLError as e:
             print(
                 "[-] url error, seems like authentication is required or server failed to handle request! - %s \n[-] payload [%s]\n" % (
-                e.code, item))
+                    e.code, item))
             pass
 
         except http.client.BadStatusLine:
@@ -525,7 +525,7 @@ def frontpage_remove_folder(name):
         except urllib.error.URLError as e:
             print(
                 "[-] url error, seems like authentication is required or server failed to handle request! - %s \n[-] payload [%s]\n" % (
-                e.code, item))
+                    e.code, item))
             pass
 
         except http.client.BadStatusLine:
@@ -570,7 +570,7 @@ def file_upload_check(name):
         except urllib.error.URLError as e:
             print(
                 "[-] url error, seems like authentication is required or server failed to handle request! - %s \n[-] payload [%s]\n" % (
-                e.code, item))
+                    e.code, item))
             pass
 
         except http.client.BadStatusLine:
@@ -581,7 +581,7 @@ def file_upload_check(name):
 # main routine to trigger sub routines (functions) !
 
 def main():
-    #check_python()
+    # check_python()
     banner()
 
     parser = optparse.OptionParser(usage="usage: %prog [options]", version="%prog 1.0")
@@ -794,7 +794,7 @@ def main():
         sys.exit(0)
 
 
-    except None:
+    except Exception as e:
         print("[] Hey")
         sys.exit(0)
 
